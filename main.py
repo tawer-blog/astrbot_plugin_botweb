@@ -30,6 +30,14 @@ class Main(star.Star):
 
     @llm_tool("sousuo_search")
     async def sousuo_search(self, event: AstrMessageEvent, query: str) -> str:
+        """这是一个“联网搜索”的函数工具（工具名：sousuo_search）。当需要获取互联网上的实时/最新信息时，你必须调用本工具进行搜索。
+
+        Args:
+            query(string): 简要说明用户希望检索的查询内容
+
+        Returns:
+            str: 要点摘要与引用来源，作为 tool 消息注入上下文
+        """
         if DDGS is None:
             return "插件缺少依赖 ddgs，请在该插件 requirements.txt 中安装后重启。"
 
@@ -46,6 +54,14 @@ class Main(star.Star):
 
     @llm_tool("sousuo_fetch")
     async def sousuo_fetch(self, event: AstrMessageEvent, url: str) -> str:
+        """抓取网页文本内容（去标签纯文本）。
+
+        Args:
+            url(string): 需要抓取内容的网页 URL
+
+        Returns:
+            str: 提取的纯文本（前 20,000 字符内），失败时返回错误信息
+        """
         if httpx is None:
             return "插件缺少依赖 httpx，请在该插件 requirements.txt 中安装后重启。"
         try:
