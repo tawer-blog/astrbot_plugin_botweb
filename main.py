@@ -78,7 +78,7 @@ class Main(star.Star):
         max_results = int(self.config.get("max_results", 10))
         
         search_params = {
-            "region": "cn-zh",
+            "region": "zh-cn",
             "safesearch": "off",
             "max_results": max_results,
             "backend": "bing"
