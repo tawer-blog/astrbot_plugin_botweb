@@ -1,0 +1,7 @@
+{
+    "max_results": {
+        "description": "最大搜索结果数量",
+        "type": "int",
+        "default": 10
+    }
+}

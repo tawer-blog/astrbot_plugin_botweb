@@ -1,0 +1,6 @@
+name: astrbot_plugin_botweb
+desc: 为你的bot添加一个联网搜索
+help: 提供联网搜索功能
+version: v2.1.0
+author: Tawer
+repo: https://github.com/tawer-blog/astrbot_plugin_botweb
